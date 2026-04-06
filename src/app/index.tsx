@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { useState } from 'react';
 import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Button } from '../components/button';
@@ -15,7 +15,7 @@ export default function IndexPage() {
             Alert.alert("Entrar", "Preencha e-mail e senha para continuar!")
             return;
         }
-        Alert.alert("Entrar", `Login realizado com: ${email}`)
+        router.push("/welcome")
     }
 
     return (
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         height: 330,
         resizeMode: 'contain',
         marginTop: 62,
-
     },
     title: {
         fontSize: 32,
